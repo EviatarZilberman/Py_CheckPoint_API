@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Py_CheckPoint_API.iml" filepath="$PROJECT_DIR$/.idea/Py_CheckPoint_API.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Py_E_Commerce_Utilities/.idea/Py_E_Commerce_Utilities.iml" filepath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/.idea/Py_E_Commerce_Utilities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Py_MongoDb/.idea/Py_MongoDb.iml" filepath="$PROJECT_DIR$/../Py_MongoDb/.idea/Py_MongoDb.iml" />
+    </modules>
+  </component>
+</project>
