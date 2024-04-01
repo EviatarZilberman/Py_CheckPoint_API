@@ -1,12 +1,11 @@
-import base64
-from datetime import datetime, timedelta
-from flask import Flask, request, jsonify, make_response
-
-import Global_methods
+# import base64
+# from datetime import datetime, timedelta
+from flask import Flask, request, jsonify #, make_response
+# import Global_methods
 from MongoDbManager import MongoDbSingleton
-from Enums.CookiesClaims import CookiesClaims
-from os import environ
-from cryptography.fernet import Fernet
+# from Enums.CookiesClaims import CookiesClaims
+# from os import environ
+# from cryptography.fernet import Fernet
 from dotenv import load_dotenv
 
 
