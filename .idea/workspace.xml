@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="843f735c-738a-4b4c-b41b-b935f6a41aae" name="Changes" comment="Handle warnings.">
+    <list default="true" id="843f735c-738a-4b4c-b41b-b935f6a41aae" name="Changes" comment="edit_payment_details started.">
+      <change afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/Enums/ProductSection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/App_API.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/PaymentDetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/PaymentDetails.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Product.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Product.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/User.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +26,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../Py_E_Commerce_Utilities" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -117,7 +121,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1711974309308</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL‎-00004" summary="edit_payment_details started.">
+      <option name="closed" value="true" />
+      <created>1711999736773</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL‎-00004" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1711999736773</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +147,18 @@
     <MESSAGE value="aoi working fine." />
     <MESSAGE value="api update." />
     <MESSAGE value="Handle warnings." />
-    <option name="LAST_COMMIT_MESSAGE" value="Handle warnings." />
+    <MESSAGE value="edit_payment_details started." />
+    <option name="LAST_COMMIT_MESSAGE" value="edit_payment_details started." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/App_API.py</url>
+          <line>69</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

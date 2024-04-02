@@ -1,10 +1,9 @@
 from flask import Flask, request, jsonify
+from DataModels.PaymentDetails import PaymentDetails
+from DataModels.User import User
 from MongoDbManager import MongoDbSingleton
-from dotenv import load_dotenv
-
 
 app_api = Flask(__name__)
-load_dotenv()
 
 
 @app_api.route("/register", methods = ["POST"])
@@ -68,13 +67,31 @@ def login():
 
 @app_api.route("/edit_payment_details", methods = ['POST'])
 def edit_payment_details():
-    data = request.get_json()
-    username_or_email = data["username_or_email"]
-    password = data["password"]
-    stay_logged = data.get("stay_logged")
+    try:
+        data = request.get_json()
+    except Exception as e:
+        print(str(e))
+    try:
+        payment_data = data["form"]
+    except Exception as e:
+        print(str(e))
+    correct_payment_id = PaymentDetails.details_validation(payment_data)
+    if not correct_payment_id:
+        return 400
+    user_id = data["user_id"]
 
     db_manager = MongoDbSingleton.MongoDbSingleton("E_Commerce", "Users")
-    dictionary = db_manager.find_one_by_key_value("email", username_or_email)
+    dictionary = db_manager.find_one_by_key_value("_id", user_id)
+
+    payment_instance = PaymentDetails.from_dict(dictionary)
+    try:
+        db_manager.update_member(user_id, 'payment_details', payment_instance)
+        return 200
+    except:
+        user = User.from_dict(dictionary)
+        user.m_payment_details = payment_instance
+        db_manager.replace_member(user)
+        return 200
 
 
 if __name__ == "__main__":
