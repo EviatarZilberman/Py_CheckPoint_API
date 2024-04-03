@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="843f735c-738a-4b4c-b41b-b935f6a41aae" name="Changes" comment="edit_payment_details started.">
-      <change afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/Enums/ProductSection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="843f735c-738a-4b4c-b41b-b935f6a41aae" name="Changes" comment="edit_payment_details debug.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/App_API.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/PaymentDetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/PaymentDetails.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Product.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Product.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Py_MongoDb/MongoDbManager/MongoDbSingleton.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_MongoDb/MongoDbManager/MongoDbSingleton.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,19 +37,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.app.executor": "Debug",
-    "Python.ecommerce.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/User/Projects/Py_CheckPoint_API",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.app.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.ecommerce.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Projects/Py_CheckPoint_API&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Projects\Py_CheckPoint_API" />
@@ -129,7 +127,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1711999736773</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL‎-00005" summary="edit_payment_details debug.">
+      <option name="closed" value="true" />
+      <created>1712083265382</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1712083265382</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,15 +154,21 @@
     <MESSAGE value="api update." />
     <MESSAGE value="Handle warnings." />
     <MESSAGE value="edit_payment_details started." />
-    <option name="LAST_COMMIT_MESSAGE" value="edit_payment_details started." />
+    <MESSAGE value="edit_payment_details debug." />
+    <option name="LAST_COMMIT_MESSAGE" value="edit_payment_details debug." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/App_API.py</url>
-          <line>69</line>
-          <option name="timeStamp" value="6" />
+          <line>83</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/App_API.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
