@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="843f735c-738a-4b4c-b41b-b935f6a41aae" name="Changes" comment="edit_payment_details debug.">
+    <list default="true" id="843f735c-738a-4b4c-b41b-b935f6a41aae" name="Changes" comment="progress with payment details.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/App_API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Global_methods.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Address.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Address.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/PaymentDetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/PaymentDetails.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/PersonalDetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/PersonalDetails.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/User.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Py_MongoDb/MongoDbManager/MongoDbSingleton.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_MongoDb/MongoDbManager/MongoDbSingleton.py" afterDir="false" />
     </list>
@@ -24,7 +27,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../Py_E_Commerce_Utilities" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -46,8 +49,8 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Projects/Py_CheckPoint_API&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Projects/Py_E_Commerce&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -135,7 +138,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1712083265382</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL‎-00006" summary="progress with payment details.">
+      <option name="closed" value="true" />
+      <created>1712177091151</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL‎-00006" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1712177091151</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,20 +166,36 @@
     <MESSAGE value="Handle warnings." />
     <MESSAGE value="edit_payment_details started." />
     <MESSAGE value="edit_payment_details debug." />
-    <option name="LAST_COMMIT_MESSAGE" value="edit_payment_details debug." />
+    <MESSAGE value="progress with payment details." />
+    <option name="LAST_COMMIT_MESSAGE" value="progress with payment details." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/App_API.py</url>
-          <line>83</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/User.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/PersonalDetails.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/User.py</url>
+          <line>97</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/PersonalDetails.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/App_API.py</url>
-          <line>66</line>
-          <option name="timeStamp" value="11" />
+          <line>81</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from DataModels.PaymentDetails import PaymentDetails
+from DataModels.PersonalDetails import PersonalDetails
 from DataModels.User import User
 from MongoDbManager import MongoDbSingleton
 
@@ -75,15 +76,28 @@ def edit_payment_details():
     dictionary = db_manager.find_one_by_key_value("_id", user_id)
 
     payment_instance = PaymentDetails.from_dict(payment_data)
-    try:
-        db_manager.update_member(user_id, 'payment_details', payment_instance)
-        return 200
-    except:
-        user = User.from_dict(dictionary)
-        user.m_payment_details = payment_instance
-        db_manager.replace_member(user)
-        return 200
+    sent_password = dictionary["password"]
+    if sent_password == payment_data["password"]:
+        try:
+            db_manager.update_member(user_id, 'personal_details.payment_details', payment_instance)
+            return jsonify(), 200
+        except:
+            user = User.from_dict(dictionary)
+            if not user.m_personal_details:
+                user.m_personal_details = PersonalDetails()
+                user.m_personal_details.m_payment_details = payment_instance
+            else:
+                user.m_personal_details.m_payment_details = payment_instance
 
+        db_manager.replace_member(user)
+        return jsonify(), 200
+    else:
+        jsonify(), 409
+
+
+@app_api.route("/edit_address", methods = ['POST'])
+def edit_address():
+    pass
 
 if __name__ == "__main__":
     app_api.run(port = 9998, debug = True)
