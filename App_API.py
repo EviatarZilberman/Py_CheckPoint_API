@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-
 from DataModels.Address import Address
 from DataModels.PaymentDetails import PaymentDetails
 from DataModels.PersonalDetails import PersonalDetails
