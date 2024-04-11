@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="843f735c-738a-4b4c-b41b-b935f6a41aae" name="Changes" comment="personal details edit in progress.">
-      <change afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/Global/Global_methods.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/App_API.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Product.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Sale.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Sale.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/User.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Py_MongoDb/MongoDbManager/MongoDbSingleton.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_MongoDb/MongoDbManager/MongoDbSingleton.py" afterDir="false" />
-    </list>
+    <list default="true" id="843f735c-738a-4b4c-b41b-b935f6a41aae" name="Changes" comment="Add new product almost done!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712317197002</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add new product almost done!">
+      <option name="closed" value="true" />
+      <created>1712695716977</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712695716977</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,7 +177,8 @@
     <MESSAGE value="edit payment details functions well." />
     <MESSAGE value="change password functions well." />
     <MESSAGE value="personal details edit in progress." />
-    <option name="LAST_COMMIT_MESSAGE" value="personal details edit in progress." />
+    <MESSAGE value="Add new product almost done!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new product almost done!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
