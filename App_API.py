@@ -72,13 +72,31 @@ def edit_payment_details():
 
     db_manager = MongoDbSingleton.MongoDbSingleton("E_Commerce", "Users")
     dictionary = db_manager.find_one_by_key_value("_id", user_id)
-
+    user = User.from_dict(dictionary)
     payment_instance = PaymentDetails.from_dict(payment_data)
     sent_password = dictionary["password"]
     if sent_password == payment_data["password"]:
         try:
-            db_manager.update_member(user_id, 'personal_details.payment_details', payment_instance)
-            return jsonify(), 200
+            if user.m_personal_details and user.m_personal_details.m_payment_details is None:
+                user.m_personal_details = PersonalDetails()
+                user.m_personal_details.m_payment_details = PaymentDetails()
+                user.m_personal_details.m_payment_details = payment_instance
+                db_manager.replace_member(user)
+                return jsonify(), 200
+            elif user.m_personal_details is not None and user.m_personal_details.m_payment_details is None:
+                user.m_personal_details.m_payment_details = PaymentDetails()
+                user.m_personal_details.m_payment_details = payment_instance
+                db_manager.replace_member(user)
+                return jsonify(), 200
+            else:
+                # db_manager.update_member(user_id, 'personal_details.payment_details', payment_instance)
+                user.m_personal_details.m_payment_details = PaymentDetails()
+                user.m_personal_details.m_payment_details = payment_instance
+                db_manager.replace_member(user)
+                return jsonify(), 200
+        # try:
+        #     db_manager.update_member(user_id, 'personal_details.payment_details', payment_instance)
+        #     return jsonify(), 200
         except:
             user = User.from_dict(dictionary)
             if not user.m_personal_details:
@@ -87,8 +105,8 @@ def edit_payment_details():
             else:
                 user.m_personal_details.m_payment_details = payment_instance
 
-        db_manager.replace_member(user)
-        return jsonify(), 200
+            db_manager.replace_member(user)
+            return jsonify(), 200
     else:
         jsonify(), 409
 
