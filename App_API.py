@@ -3,7 +3,7 @@ from DataModels.Address import Address
 from DataModels.PaymentDetails import PaymentDetails
 from DataModels.PersonalDetails import PersonalDetails
 from DataModels.User import User
-from MongoDbManager import MongoDbSingleton
+from MongoDbManager.MongoDbSingleton import MongoDbSingleton
 
 app_api = Flask(__name__)
 
@@ -22,7 +22,12 @@ def register():
     password = data["password"]
     confirm_password = data["confirm_password"]
 
-    user = db_manager.find_by_key_value("email", email)
+    try:
+        user = db_manager.find_by_key_value("email", email)
+    except Exception as e:
+        print(str(e))
+        return None
+
     if user:
         errors.append("User is already exist!")
         return jsonify(errors), 409
@@ -31,7 +36,11 @@ def register():
     if errors:
         return jsonify(errors), 409
 
-    db_manager.m_instance.insert(User(username, f_name, l_name, email, password))
+    try:
+        db_manager.insert(User(username, f_name, l_name, email, password))
+    except Exception as e:
+        print(str(e))
+        return None
 
     return jsonify(["User created successfully!"]), 201
 
@@ -43,8 +52,12 @@ def login():
     password = data["password"]
     stay_logged = data.get("stay_logged")
 
-    db_manager = MongoDbSingleton.MongoDbSingleton("E_Commerce", "Users")
-    dictionary = db_manager.find_one_by_key_value("email", username_or_email)
+    db_manager = MongoDbSingleton.MongoDbSingleton('E_Commerce', 'Users')
+    try:
+        dictionary = db_manager.find_one_by_key_value("email", username_or_email)
+    except Exception as e:
+        print(str(e))
+        return None
     if not dictionary:
         dictionary = db_manager.find_one_by_key_value("username", username_or_email)
 
@@ -53,7 +66,7 @@ def login():
 
     from DataModels.User import User
     user = User.from_dict(dictionary)
-    if password == user.m_password:
+    if password == user.password:
         result = {
             'user': user.to_dict(),
             'stay_logged': stay_logged
@@ -70,28 +83,28 @@ def edit_payment_details():
     payment_data = data["form"]
     user_id = data["user_id"]
 
-    db_manager = MongoDbSingleton.MongoDbSingleton("E_Commerce", "Users")
+    db_manager = MongoDbSingleton("E_Commerce", "Users")
     dictionary = db_manager.find_one_by_key_value("_id", user_id)
     user = User.from_dict(dictionary)
     payment_instance = PaymentDetails.from_dict(payment_data)
     sent_password = dictionary["password"]
     if sent_password == payment_data["password"]:
         try:
-            if user.m_personal_details and user.m_personal_details.m_payment_details is None:
-                user.m_personal_details = PersonalDetails()
-                user.m_personal_details.m_payment_details = PaymentDetails()
-                user.m_personal_details.m_payment_details = payment_instance
+            if user.personal_details and user.personal_details.payment_details is None:
+                user.personal_details = PersonalDetails()
+                user.personal_details.payment_details = PaymentDetails()
+                user.personal_details.payment_details = payment_instance
                 db_manager.replace_member(user)
                 return jsonify(), 200
-            elif user.m_personal_details is not None and user.m_personal_details.m_payment_details is None:
-                user.m_personal_details.m_payment_details = PaymentDetails()
-                user.m_personal_details.m_payment_details = payment_instance
+            elif user.personal_details is not None and user.personal_details.payment_details is None:
+                user.personal_details.payment_details = PaymentDetails()
+                user.personal_details.payment_details = payment_instance
                 db_manager.replace_member(user)
                 return jsonify(), 200
             else:
                 # db_manager.update_member(user_id, 'personal_details.payment_details', payment_instance)
-                user.m_personal_details.m_payment_details = PaymentDetails()
-                user.m_personal_details.m_payment_details = payment_instance
+                user.personal_details.payment_details = PaymentDetails()
+                user.personal_details.payment_details = payment_instance
                 db_manager.replace_member(user)
                 return jsonify(), 200
         # try:
@@ -99,11 +112,11 @@ def edit_payment_details():
         #     return jsonify(), 200
         except:
             user = User.from_dict(dictionary)
-            if not user.m_personal_details:
-                user.m_personal_details = PersonalDetails()
-                user.m_personal_details.m_payment_details = payment_instance
+            if not user.personal_details:
+                user.personal_details = PersonalDetails()
+                user.personal_details.payment_details = payment_instance
             else:
-                user.m_personal_details.m_payment_details = payment_instance
+                user.personal_details.payment_details = payment_instance
 
             db_manager.replace_member(user)
             return jsonify(), 200
@@ -116,19 +129,20 @@ def edit_personal_details():
     data = request.get_json()
     personal_data = data["form"]
     user_id = data["user_id"]
-
-    db_manager = MongoDbSingleton.MongoDbSingleton("E_Commerce", "Users")
+    MongoDbSingleton.reinitialize()
+    db_manager = MongoDbSingleton("E_Commerce", "Users")
     dictionary = db_manager.find_one_by_key_value("_id", user_id)
     user = User.from_dict(dictionary)
     address_instance = Address.from_dict(personal_data)
     try:
-        if user.m_personal_details and user.m_personal_details.m_address is None:
+        if user.personal_details and user.personal_details.address is None:
             db_manager.update_member(user_id, 'personal_details.address', address_instance)
             return jsonify(), 200
-        elif user.m_personal_details and user.m_personal_details.m_address:
+        elif user.personal_details and user.personal_details.address:
             db_manager.update_member(user_id, 'personal_details.address', address_instance)
             return jsonify(), 200
         else:
+            item_id = None
             if 'entrance' in dictionary:
                 entrance = dictionary["entrance"]
             else:
@@ -138,7 +152,7 @@ def edit_personal_details():
             else:
                 mail_box = None
             if 'id' in dictionary:
-                id = dictionary["id"]
+                item_id = dictionary["id"]
             else:
                 mail_box = None
             if 'created_at' in dictionary:
@@ -148,16 +162,16 @@ def edit_personal_details():
             user.m_personal_details.m_address = Address(personal_data['country'], personal_data['city'],
                                                         personal_data['street'], personal_data['number'],
                                                         personal_data['floor'], personal_data['apartment'],
-                                                        entrance, mail_box, id, created_at)
+                                                        entrance, mail_box, item_id, created_at)
         db_manager.replace_member(user)
         return jsonify(), 200
     except Exception as e:
         print(str(e))
-        if not user.m_personal_details:
-            user.m_personal_details = PersonalDetails()
-            user.m_personal_details.m_address = address_instance
+        if not user.personal_details:
+            user.personal_details = PersonalDetails()
+            user.personal_details.address = address_instance
         else:
-            user.m_personal_details.m_address = address_instance
+            user.personal_details.address = address_instance
 
     db_manager.replace_member(user)
     return jsonify(), 200
@@ -174,13 +188,15 @@ def change_password():
 
     db_manager = MongoDbSingleton.MongoDbSingleton("E_Commerce", "Users")
     dictionary = db_manager.find_one_by_key_value("_id", user_id)
-    dicy_old_password = dictionary["password"]
-    if dicy_old_password != old_password:
+    dict_old_password = dictionary["password"]
+    if dict_old_password != old_password:
         return jsonify(), 409
     else:
         error_list = User.valid_password(new_password, confirm_new_password)
         if len(error_list) == 0:
             try:
+                # user = User.from_dict(dictionary)
+                # db_manager.replace_member(user)
                 db_manager.update_member(user_id, 'password', new_password)
                 return jsonify(), 200
             except:

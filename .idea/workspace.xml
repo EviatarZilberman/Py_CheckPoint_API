@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="843f735c-738a-4b4c-b41b-b935f6a41aae" name="Changes" comment="Update for mongodb module.">
+    <list default="true" id="843f735c-738a-4b4c-b41b-b935f6a41aae" name="Changes" comment="PaymentDetails fixed.">
+      <change afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/Enums/ProductStatus.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App_API.py" beforeDir="false" afterPath="$PROJECT_DIR$/App_API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Address.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Address.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Base.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Owned.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Owned.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/PaymentDetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/PaymentDetails.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/PersonalDetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/PersonalDetails.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Product.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Product.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Sale.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/Sale.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/DataModels/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/Global/Global_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/Global/Global_methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Py_MongoDb/MongoDbManager/MongoDbSingleton.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Py_MongoDb/MongoDbManager/MongoDbSingleton.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +33,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../Python_Interpeter/Lib/socketserver.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/pymongo/periodic_executor.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/pymongo/pool.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -166,7 +180,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1712830968525</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL‎-00010" summary="PaymentDetails fixed.">
+      <option name="closed" value="true" />
+      <created>1713216344365</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1713216344365</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,15 +214,26 @@
     <MESSAGE value="personal details edit in progress." />
     <MESSAGE value="Add new product almost done!" />
     <MESSAGE value="Update for mongodb module." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update for mongodb module." />
+    <MESSAGE value="PaymentDetails fixed." />
+    <option name="LAST_COMMIT_MESSAGE" value="PaymentDetails fixed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../Py_MongoDb/MongoDbManager/MongoDbSingleton.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/App_API.py</url>
-          <line>40</line>
-          <option name="timeStamp" value="57" />
+          <line>81</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/App_API.py</url>
+          <line>181</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
