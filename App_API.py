@@ -12,7 +12,7 @@ app_api = Flask(__name__)
 def register():
     from DataModels.User import User
 
-    db_manager = MongoDbSingleton.MongoDbSingleton("E_Commerce", "Users")
+    db_manager = MongoDbSingleton("E_Commerce", "Users")
     errors = []
     data = request.get_json()
     username = data["username"]
@@ -45,14 +45,14 @@ def register():
     return jsonify(["User created successfully!"]), 201
 
 
-@app_api.route("/login", methods = ["POST"])
+@app_api.route("/login", methods = ["POST", "GET"])
 def login():
     data = request.get_json()
     username_or_email = data["username_or_email"]
     password = data["password"]
     stay_logged = data.get("stay_logged")
 
-    db_manager = MongoDbSingleton.MongoDbSingleton('E_Commerce', 'Users')
+    db_manager = MongoDbSingleton('E_Commerce', 'Users')
     try:
         dictionary = db_manager.find_one_by_key_value("email", username_or_email)
     except Exception as e:
@@ -83,6 +83,7 @@ def edit_payment_details():
     payment_data = data["form"]
     user_id = data["user_id"]
 
+    MongoDbSingleton.reinitialize()
     db_manager = MongoDbSingleton("E_Commerce", "Users")
     dictionary = db_manager.find_one_by_key_value("_id", user_id)
     user = User.from_dict(dictionary)
@@ -186,7 +187,8 @@ def change_password():
     new_password = form['new_password']
     confirm_new_password = form['confirm_new_password']
 
-    db_manager = MongoDbSingleton.MongoDbSingleton("E_Commerce", "Users")
+    MongoDbSingleton.reinitialize()
+    db_manager = MongoDbSingleton("E_Commerce", "Users")
     dictionary = db_manager.find_one_by_key_value("_id", user_id)
     dict_old_password = dictionary["password"]
     if dict_old_password != old_password:
@@ -195,14 +197,16 @@ def change_password():
         error_list = User.valid_password(new_password, confirm_new_password)
         if len(error_list) == 0:
             try:
-                # user = User.from_dict(dictionary)
-                # db_manager.replace_member(user)
-                db_manager.update_member(user_id, 'password', new_password)
+                user = User.from_dict(dictionary)
+                user.password = new_password
+                db_manager.replace_member(user)
+                # db_manager.update_member(user_id, 'password', new_password)
                 return jsonify(), 200
             except:
                 user = User.from_dict(dictionary)
-                user.m_password = new_password
+                user.password = new_password
                 db_manager.replace_member(user)
+
                 return jsonify(), 200
         else:
             jsonify(), 409
