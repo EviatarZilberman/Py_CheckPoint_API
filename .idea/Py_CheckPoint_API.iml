@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Py_E_Commerce_Utilities" />
     <orderEntry type="module" module-name="Py_MongoDb" />
+    <orderEntry type="module" module-name="Py_Logger" />
   </component>
 </module>

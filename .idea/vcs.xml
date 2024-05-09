@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Py_E_Commerce_Utilities" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Py_Logger" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Py_MongoDb" vcs="Git" />
   </component>
 </project>

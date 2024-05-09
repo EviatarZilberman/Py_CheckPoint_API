@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Py_CheckPoint_API.iml" filepath="$PROJECT_DIR$/.idea/Py_CheckPoint_API.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Py_E_Commerce_Utilities/.idea/Py_E_Commerce_Utilities.iml" filepath="$PROJECT_DIR$/../Py_E_Commerce_Utilities/.idea/Py_E_Commerce_Utilities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Py_Logger/.idea/Py_Logger.iml" filepath="$PROJECT_DIR$/../Py_Logger/.idea/Py_Logger.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Py_MongoDb/.idea/Py_MongoDb.iml" filepath="$PROJECT_DIR$/../Py_MongoDb/.idea/Py_MongoDb.iml" />
     </modules>
   </component>
